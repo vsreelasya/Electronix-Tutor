@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 a{color:#333}a:hover,a:focus,.maincolor,.maincolor a{color:#06c}
-.navbar{ background:#004d99;height: 90px; background-image:url(../../../../img/globe.png);margin-left: 405px;}
+.navbar{ background:#004d99;height: 60px; background-image:url(../../../../img/globe.png);margin-left: 405px;}
 	.navbar-logo,.navbar-logo-m,.navbar-slogan,.navbar-userbar{color:#fff}
 	.navbar-logo:hover,.navbar-logo-m:hover{color:#fff;text-decoration: none}
 	
