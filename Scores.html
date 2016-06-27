@@ -41,8 +41,8 @@ H2 { text-align: center }
 		<div class="cardContainer">
 			<div class="col-sm-4">
 				<div class="w3-card-8" style="width:100%">
-<h2>Performance</h2>
-<canvas id="myChart" width="100" height="100"></canvas>
+					<h2>Performance</h2>
+					<canvas id="myChart" width="100" height="100"></canvas>
 				
 				</div>
 			</div>
@@ -51,14 +51,15 @@ H2 { text-align: center }
 			<div class="col-sm-4">
 				<div class="w3-card-8" style="width:90%">
 				<h2>Skill Rating</h2>
-<canvas id="countries" width="100" height="100"></canvas>
+					<canvas id="countries" width="100" height="100"></canvas>
 				
 				</div>
 			</div>
 			<!-- -->
 			<div class="col-sm-4">
 				<div class="w3-card-8" style="width:90%">
-
+					<h2>Performance</h2>
+					<canvas id="myLine" width="100" height="100"></canvas>
 				
 
 				</div>
@@ -87,27 +88,11 @@ H2 { text-align: center }
          $( document ).ready(function() {
           var ctx = document.getElementById("myChart").getContext("2d");
 		  var countries= document.getElementById("countries").getContext("2d");
+		  var ctx3 = document.getElementById("myLine").getContext("2d");
 //new Chart(countries).Pie(pieData, pieOptions);
 
 
-var pieData = [
-	{
-		value: 20,
-		color:"#878BB6"
-	},
-	{
-		value : 40,
-		color : "#4ACAB4"
-	},
-	{
-		value : 10,
-		color : "#FF8153"
-	},
-	{
-		value : 30,
-		color : "#FFEA88"
-	}
-];
+
 var pieData = {
     labels: [ "CC Amplifier", "CB Amplifier", "Multistage Amplifier"],
     datasets: [
@@ -135,6 +120,32 @@ var pieData = {
        // }
     ]
 };
+var lineData = {
+labels: ["Ohm's Law", "Series Circuits", "Parallel Circuits", "Series/Parallel", "Diodes", "Limiters", "Clampers", "Transistors", "Intro to Battery Bias", "Fixed Bias/Voltage Divider", "CC Amplifier", "CB Amplifier", "Multistage Amplifier", "Push-Pull Amplifier"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 81, 56, 55, 40,65, 59, 80, 81, 56, 55, 40],
+        }
+    ]
+};
 
 
 
@@ -147,6 +158,12 @@ var myPieChart = new Chart(countries, {
     type: 'pie',
     data: pieData
 });
+var myLineChart = new Chart(ctx3, {
+    type: 'line',
+    data: lineData
+});
+
+
 var data = {
     labels: ["Ohm's Law", "Series Circuits", "Parallel Circuits", "Series/Parallel", "Diodes", "Limiters", "Clampers", "Transistors", "Intro to Battery Bias", "Fixed Bias/Voltage Divider", "CC Amplifier", "CB Amplifier", "Multistage Amplifier", "Push-Pull Amplifier"],
     datasets: [
