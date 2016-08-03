@@ -14,6 +14,9 @@
     <script>
 
         $(document).ready(function() {
+			$.ajax({url: "data.json", success: function(result){
+				console.log(result);
+			}});
             var today = moment().format('YYYY-MM-DD')
             $('#calendar').fullCalendar({
                 customButtons: {
@@ -33,36 +36,7 @@
                 defaultDate: moment().format('YYYY-MM-DD'),
                 editable: true,
             eventLimit: true, // allow "more" link when too many events
-            events: [
-            {
-                title: 'Kirchoff’s current law, Assignment #2',
-                start: moment().add(1, 'days').format('YYYY-MM-DD'),
-                color: '#2980b9',
-                topic: 'Physics'
-            },
-            {
-                title: 'Transformers, Assignment #4',
-                start: moment().add(1, 'days').format('YYYY-MM-DD'),
-                end: moment().add(3, 'days').format('YYYY-MM-DD'),
-                color: '#c0392b',
-                topic: 'Movies'
-
-            },
-            {
-                title: 'Diodes Dragoon Assignment',
-                start: moment().add(5, 'days').format('YYYY-MM-DD'),
-                end: moment().add(7, 'days').format('YYYY-MM-DD'),
-                color: '#16a085',
-                topic: 'Physics'
-            },
-            {
-                title: 'Zener Diode: Auto-Tutor assignment',
-                start: moment().add(8, 'days').format('YYYY-MM-DD'),
-                end: moment().add(12, 'days').format('YYYY-MM-DD'),
-                color: '#8e44ad',
-                topic: 'Physics'
-            }
-            ],
+            events: [],
             eventClick: function(calEvent, jsEvent, view) {
                 alert('Event: ' + calEvent.title + '\n' + 'Topic: ' + calEvent.topic);
                 // change the border color just for fun
