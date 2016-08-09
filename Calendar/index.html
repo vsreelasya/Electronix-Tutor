@@ -14,9 +14,6 @@
     <script>
 
         $(document).ready(function() {
-			$.ajax({url: "data.json", success: function(result){
-				console.log(result);
-			}});
             var today = moment().format('YYYY-MM-DD')
             $('#calendar').fullCalendar({
                 customButtons: {
@@ -36,20 +33,27 @@
                 defaultDate: moment().format('YYYY-MM-DD'),
                 editable: true,
             eventLimit: true, // allow "more" link when too many events
-            events: [],
-            eventClick: function(calEvent, jsEvent, view) {
-                alert('Event: ' + calEvent.title + '\n' + 'Topic: ' + calEvent.topic);
-                // change the border color just for fun
-                //$(this).css('border', '5px solid red');
-            },
-            dayClick: function(date, allDay, jsEvent, view) {
+            eventSources: [
+                // Will be replaced with Web Service / API
+                {
+                    url: 'data.json',
+                    type: 'GET',
+                    error: function() {
+                        alert('there was an error while fetching events!');
+                    }
+                }
+                ],
+                eventClick: function(calEvent, jsEvent, view) {
+                    alert('Event: ' + calEvent.title + '\n' + 'Topic: ' + calEvent.topic + '\n URL: ' + calEvent.URL);
+                },
+                dayClick: function(date, allDay, jsEvent, view) {
                 //console.log(view.name);
-                    $('#calendar').fullCalendar('gotoDate', date);
-                    $('#calendar').fullCalendar('changeView', 'basicDay');
+                $('#calendar').fullCalendar('gotoDate', date);
+                $('#calendar').fullCalendar('changeView', 'basicDay');
 
             }
         });
-    });
+        });
 
     </script>
     <style>
