@@ -8,7 +8,7 @@ h4{line-height:30px}
 
 
 .Hui-header{position:absolute;top:0; right:0; left:0;height:44px;z-index:999; padding:0 15px}
-.Hui-aside{position: absolute;top:0;bottom:0;left:0;padding-top:10px;width:400px;z-index:99;overflow:auto; background-color:#333366;border-right: 5px solid #282440;border-top: 5px solid #282440;}
+.Hui-aside{position: absolute;top:0;bottom:0;left:0;padding-top:10px;width:400px;z-index:99;overflow:auto; background-color:#004d99;border-right: 5px solid #282440;border-top: 5px solid #282440;}
 .Hui-article-box{position: absolute;top:60px;right:0;bottom: 0;left:400px; overflow:hidden; z-index:1; background-color:#fff}
 	.Hui-article{position: absolute;top:39px;bottom:0;left:0; right:0;overflow:auto;z-index:1}
 .Hui-container{ padding:45px 0 0}

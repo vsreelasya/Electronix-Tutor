@@ -26,7 +26,7 @@
             <div class="container-fluid cl">
                <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                   <ul class="cl">
-                     <li id="Hui-msg"> <a href="https://www.assistments.org/direct/assignment/6f41f3800f629450525c348775f1af51" title="Login"><i class="Hui-iconfont" style="font-size:18px">(Login)</i></a> </li>
+                     <li id="Hui-msg"> <a href="signin/signin.html" title="Logout"><i id="loginText" class="Hui-iconfont" style="font-size:18px">(Login)</i></a> </li>
                   </ul>
                </nav>
             </div>
@@ -192,8 +192,14 @@
       <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script> 
       <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> 
       <script type="text/javascript">
+	  var data = '';
+	  var arr;
          $( document ).ready(function() {
-          
+		 data = document.location.href;
+		 var arr = data.split('username=');
+		 $('#loginText').html(arr[1]);
+		 //document.getElementById("demo").innerHTML = "Paragraph changed!";
+          //alert(arr[1]);
          				
          });
          
